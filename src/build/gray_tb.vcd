@@ -1,0 +1,51 @@
+$date
+	Thu Aug 22 17:51:53 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module gray_tb $end
+$var wire 1 ! b3 $end
+$var wire 1 " b2 $end
+$var wire 1 # b1 $end
+$var wire 1 $ b0 $end
+$var reg 1 % s0 $end
+$var reg 1 & s1 $end
+$var reg 1 ' s2 $end
+$var reg 1 ( s3 $end
+$scope module dut $end
+$var wire 1 $ b0 $end
+$var wire 1 # b1 $end
+$var wire 1 " b2 $end
+$var wire 1 ! b3 $end
+$var wire 1 % s0 $end
+$var wire 1 & s1 $end
+$var wire 1 ' s2 $end
+$var wire 1 ( s3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#10
+1#
+0$
+1"
+1%
+1'
+#30
