@@ -1,5 +1,5 @@
 $date
-	Sun Aug 25 01:14:33 2024
+	Sun Aug 25 11:52:20 2024
 $end
 $version
 	Icarus Verilog
@@ -9,30 +9,24 @@ $timescale
 $end
 $scope module bcd_tb $end
 $var wire 8 ! w [7:0] $end
-$var reg 1 " s0 $end
-$var reg 1 # s1 $end
-$var reg 1 $ s2 $end
-$var reg 1 % s3 $end
+$var reg 4 " s [3:0] $end
 $scope module dut $end
-$var wire 1 " s0 $end
-$var wire 1 # s1 $end
-$var wire 1 $ s2 $end
-$var wire 1 % s3 $end
-$var wire 8 & y [7:0] $end
-$var wire 8 ' w [7:0] $end
-$var wire 1 ( d $end
-$var wire 1 ) c $end
-$var wire 1 * b $end
-$var wire 1 + a $end
+$var wire 4 # s [3:0] $end
+$var wire 8 $ y [7:0] $end
+$var wire 8 % w [7:0] $end
+$var wire 1 & d $end
+$var wire 1 ' c $end
+$var wire 1 ( b $end
+$var wire 1 ) a $end
 $scope module conv $end
-$var wire 1 ( b0 $end
-$var wire 1 ) b1 $end
-$var wire 1 * b2 $end
-$var wire 1 + b3 $end
-$var wire 1 " s0 $end
-$var wire 1 # s1 $end
-$var wire 1 $ s2 $end
-$var wire 1 % s3 $end
+$var wire 1 & b0 $end
+$var wire 1 ' b1 $end
+$var wire 1 ( b2 $end
+$var wire 1 ) b3 $end
+$var wire 1 * s0 $end
+$var wire 1 + s1 $end
+$var wire 1 , s2 $end
+$var wire 1 - s3 $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -42,26 +36,51 @@ $dumpall
 $end
 #0
 $dumpvars
+0-
+0,
 0+
 0*
 0)
 0(
-b1000 '
-b1000 &
-0%
-0$
-0#
-0"
-b1000 !
+0'
+0&
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
 $end
 #10
+1&
+1'
+b111 !
+b111 %
+b111 $
+1(
+1,
+b100 "
+b100 #
+#20
+0&
 b11000 !
-b11000 '
-b11000 &
+b11000 %
+b11000 $
+0'
 1)
-1"
-1#
-1$
+1-
+0,
 1+
-1%
+b1010 "
+b1010 #
 #30
+1'
+0(
+b10000 !
+b10000 %
+b10000 $
+0&
+1,
+1*
+b1111 "
+b1111 #
+#80

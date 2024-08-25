@@ -1,23 +1,31 @@
 module bcd_tb();
 
-    logic s3, s2, s1, s0;
-    logic [7:0] w;
+    logic [3:0]s;
+    logic [7:0]w;
 
-    bcd dut(s3, s2, s1, s0, w);
+    bcd dut( .s(s), .w(w));
 
     initial begin
+        $monitor("Gray: %b | (BCD): %b", s, w);
 
-        s3 = 0; s2 = 0; s1 = 0; s0 = 0 ; #10;
+        //Prueba 1
+        s = 4'b0000; #10; //Gray: 0, decenas:0 , unidades: 0
 
-        s3 = 1; s2 = 1; s1 = 1; s0 = 1; #10;
+        //Prueba 2
+        s = 4'b0100; #10; //Gray: 7, decenas:0 , unidades: 7
 
+        //Prueba 3
+        s = 4'b1010; #10; //Gray: 12, decenas:1 , unidades: 2
+
+        //Prueba 4
+        s = 4'b1111; #10; //Gray: 10, decenas:1 , unidades: 0
 
     end   
 
     initial begin
         $display("Empezando simulacion");
 
-        #30;
+        #80;
 
         $display("Finalizando simulacion");
         $finish;
