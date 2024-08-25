@@ -10,9 +10,9 @@ module bcd(input logic [3:0] s,
 
     assign y[7:5] = 0;
     assign y[4] =  a & (b | c); 
-    assign y[3] = a & b & ~c;
+    assign y[3] = a & ~b & ~c;
     assign y[2] = b & (~a | c);
-    assign y[1] =  ~a & c;
+    assign y[1] =  ~a & c | a & b & ~c;
     assign y[0] = d;
 
 
