@@ -1,0 +1,67 @@
+$date
+	Sun Aug 25 01:14:33 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bcd_tb $end
+$var wire 8 ! w [7:0] $end
+$var reg 1 " s0 $end
+$var reg 1 # s1 $end
+$var reg 1 $ s2 $end
+$var reg 1 % s3 $end
+$scope module dut $end
+$var wire 1 " s0 $end
+$var wire 1 # s1 $end
+$var wire 1 $ s2 $end
+$var wire 1 % s3 $end
+$var wire 8 & y [7:0] $end
+$var wire 8 ' w [7:0] $end
+$var wire 1 ( d $end
+$var wire 1 ) c $end
+$var wire 1 * b $end
+$var wire 1 + a $end
+$scope module conv $end
+$var wire 1 ( b0 $end
+$var wire 1 ) b1 $end
+$var wire 1 * b2 $end
+$var wire 1 + b3 $end
+$var wire 1 " s0 $end
+$var wire 1 # s1 $end
+$var wire 1 $ s2 $end
+$var wire 1 % s3 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0+
+0*
+0)
+0(
+b1000 '
+b1000 &
+0%
+0$
+0#
+0"
+b1000 !
+$end
+#10
+b11000 !
+b11000 '
+b11000 &
+1)
+1"
+1#
+1$
+1+
+1%
+#30
