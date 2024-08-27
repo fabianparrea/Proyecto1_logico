@@ -1,4 +1,5 @@
-module segm(input logic s3,s2,s1,s0, s,
+module segm(input logic [3:0] s, 
+            input logic bot,
             output logic a, b, c, d, e, f, g, an0, an1); // inputs 4 bits iniciales y s boton de cambio (dec/uni)
 
     assign an0 = 0;
@@ -7,10 +8,10 @@ module segm(input logic s3,s2,s1,s0, s,
     logic [7:0] y;  //defino a y que va a pasar por el modulo del bcd
     logic [3:0] bitselec; //defino a la variable que elige los 4 bits de decenas o unidades
 
-    bcd disp(s3, s2, s1, s0, y[7:0]);
+    bcd disp(s[3:0], y[7:0]);
     
 
-    assign bitselec = s ? y[0:3] : y[4:7];  //mux para asignar a bitselec decenas o unidades
+    assign bitselec = bot ? y[3:0] : y[7:4];  //mux para asignar a bitselec decenas o unidades
 
 
     logic a1, b1, c1, d1;       // a partir de aqui logica booleana para cada salida del 7 segm
@@ -18,7 +19,7 @@ module segm(input logic s3,s2,s1,s0, s,
 
 
 
-    assign a = (~a1 & ~b1 & ~c1 & d1) | (~a1 & b1 & ~c1 & ~d1) | (a1 & ~b1 & c1 & d1) | (a1 & b1 & c1 & ~d1);
+    assign a = ~a1 & ~b1 & ~c1 & d1 | ~a1 & b1 & ~c1 & ~d1 | a1 & b1 & c1 & ~d1 | a1 & ~b1 & c1 & d1;
 
     assign b = (~a1 & ~b1 & d1) | (~a1 & c1 & d1) | (a1 & ~b1 & ~c1) | (a1 & b1 & ~d1);
 

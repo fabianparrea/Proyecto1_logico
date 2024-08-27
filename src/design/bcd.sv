@@ -6,7 +6,7 @@ module bcd(input logic [3:0] s,
     logic [7:0] y;
     
 
-    gray conv(s[3], s[2], s[1], s[0], a, b, c, d);
+    gray conv(s , a, b, c, d);
 
     assign y[7:5] = 0;
     assign y[4] =  a & (b | c); 
