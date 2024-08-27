@@ -1,42 +1,43 @@
 module ledsbin_tb();
 
-    logic s3, s2, s1, s0, led3, led2, led1, led0;
+    logic [3:0]s, 
+    logic led3, led2, led1, led0;
 
-    ledsbin dut(s3, s2, s1, s0, led3, led2, led1, led0);
+    ledsbin dut(.s(s), .led3(led3), .led2(led2), .led1(led1), .led0(led0));
 
     initial begin
-        //Prueba 1 Gray:0000/Binario:0000
-        s3 = 0; s2 = 0; s1 = 0; s0 = 0 ; #10;
-        //Prueba 2 Gray:0001/Binario:0001
-        s3 = 0; s2 = 0; s1 = 0; s0 = 1; #10;
-        //Prueba 3 Gray:0011/Binario:0010
-        s3 = 0; s2 = 0; s1 = 1; s0 = 1 ; #10;
-        //Prueba 4 Gray:0010/Binario:0011
-        s3 = 0; s2 = 0; s1 = 1; s0 = 0 ; #10;
-        //Prueba 5 Gray:0110/Binario:0100
-        s3 = 0; s2 = 1; s1 = 1; s0 = 0 ; #10;
-        //Prueba 6 Gray:0111/Binario:0101
-        s3 = 0; s2 = 1; s1 = 1; s0 = 1 ; #10;
-        //Prueba 7 Gray:0101/Binario:0110
-        s3 = 0; s2 = 1; s1 = 0; s0 = 1 ; #10;
-        //Prueba 8 Gray:0100/Binario:0111
-        s3 = 0; s2 = 1; s1 = 0; s0 = 0 ; #10;
-        //Prueba 9 Gray:1100/Binario:1000
-        s3 = 1; s2 = 1; s1 = 0; s0 = 0 ; #10;
-        //Prueba 10 Gray:1101/Binario:1001
-        s3 = 1; s2 = 1; s1 = 0; s0 = 1 ; #10;
-        //Prueba 11 Gray:1111/Binario:1010
-        s3 = 1; s2 = 1; s1 = 1; s0 = 1 ; #10;
-        //Prueba 12 Gray:1110/Binario:1011
-        s3 = 1; s2 = 1; s1 = 1; s0 = 0 ; #10;
-        //Prueba 13 Gray:1010/Binario:1100
-        s3 = 1; s2 = 0; s1 = 1; s0 = 0 ; #10;
-        //Prueba 14 Gray:1011/Binario:1101
-        s3 = 1; s2 = 0; s1 = 1; s0 = 1 ; #10;
-        //Prueba 15 Gray:1001/Binario:1110
-        s3 = 1; s2 = 0; s1 = 0; s0 = 1 ; #10;
-        //Prueba 16 Gray:1000/Binario:1111
-        s3 = 1; s2 = 0; s1 = 0; s0 = 0;
+        //Prueba 0
+        s = 4'b0000; #10; //Gray: 0
+        //Prueba 1
+        s = 4'b0001; #10; //Gray: 1
+        //Prueba 2
+        s = 4'b0011; #10; //Gray: 2
+        //Prueba 3
+        s = 4'b0010; #10; //Gray: 3
+        //Prueba 4
+        s = 4'b0110; #10; //Gray: 4
+        //Prueba 5
+        s = 4'b0111; #10; //Gray: 5
+        //Prueba 6
+        s = 4'b0101; #10; //Gray: 6
+        //Prueba 7
+        s = 4'b0100; #10; //Gray: 7
+        //Prueba 8
+        s = 4'b1100; #10; //Gray: 8
+        //Prueba 9
+        s = 4'b1101; #10; //Gray: 9
+        //Prueba 10
+        s = 4'b1111; #10; //Gray: 10
+        //Prueba 11
+        s = 4'b1110; #10; //Gray: 11
+        //Prueba 12
+        s = 4'b1010; #10; //Gray: 12
+        //Prueba 13
+        s = 4'b1011; #10; //Gray: 13
+        //Prueba 14
+        s = 4'b1001; #10; //Gray: 14
+        //Prueba 15
+        s = 4'b1000; //Gray: 15
 
 
     end   

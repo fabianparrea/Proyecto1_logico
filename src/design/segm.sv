@@ -29,8 +29,8 @@ module segm(input logic [3:0] s,
 
     assign e = (~a1 & ~b1 & ~c1) | (~a1 & b1 & c1 & d1) | (a1 & ~b1 & d1) | (a1 & b1 & ~c1 & ~d1);
 
-    assign f = (~a1 & ~b1 & c1) | (~a1 & ~b1 & d1) | (a1 & b1 & ~d1) | (a1 & ~b1 & ~c1);
+    assign f = ~a1 & ~b1 & d1 | ~a1 & ~b1 & c1 | ~a1 & c1 & d1 | a1 & b1 & ~c1 | ~b1 & c1 & d1;
 
-    assign g = (~a1 & ~b1 & ~c1 & ~d1) | (~a1 & b1 & c1) | (a1 & ~b1 & ~c1 & ~d1) | (a1 & b1 & d1);
+    assign g = ~a1 & ~b1 & ~c1 | ~a1 & b1 & c1 & d1 | a1 & ~b1 & c1;
 
 endmodule
