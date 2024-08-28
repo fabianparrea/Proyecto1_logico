@@ -4,8 +4,9 @@ module segm_tb();
     logic bot;
     logic a, b, c, d, e, f, g;
     logic an0, an1;
+    logic led3, led2, led1, led0;
 
-    segm dut(.s(s), .bot(bot), .a(a), .b(b), .c(c), .d(d), .e(e), .f(f), .g(g), .an0(an0), .an1(an1));
+    segm dut(.s(s), .bot(bot), .a(a), .b(b), .c(c), .d(d), .e(e), .f(f), .g(g), .an0(an0), .an1(an1), .led3(led3), .led2(led2), .led1(led1), .led0(led0));
 
     initial begin
     
